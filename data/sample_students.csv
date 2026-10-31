@@ -1,0 +1,4 @@
+student_id,display_name,programme,total_fee,paid_fee,pending_fee,fee_status,due_date,scholarship_status
+STU1001,Aarav Shah,PGDM in Big Data Analytics,400000,200000,200000,Partially Paid,2027-01-15,Application under review
+STU1002,Diya Mehta,PGDM in AI & Data Science,400000,400000,0,Paid,2026-12-15,Not applied
+STU1003,Kabir Patel,PGDM in Big Data Analytics,400000,100000,300000,Partially Paid,2027-02-15,Eligible to apply

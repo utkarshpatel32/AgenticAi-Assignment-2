@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#b41072">
+  <meta name="description" content="AIDTM Smart Campus AI — an intelligent student-support agent with tools, policy retrieval, memory and traces.">
+  <title>AIDTM Smart Campus AI | Student Support</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/chat-first.css">
+  <script defer src="/js/app.js"></script>
+</head>
+<body class="chat-first-layout">
+  <div class="utility-bar">
+    <div class="utility-inner">
+      <a href="tel:+916358975222"><span aria-hidden="true">☎</span> +91-63589 75222</a>
+      <a href="mailto:admissions@aidtm.ac.in"><span aria-hidden="true">✉</span> admissions@aidtm.ac.in</a>
+      <a href="https://www.aidtm.ac.in/contactus" target="_blank" rel="noopener noreferrer">Contact AIDTM ↗</a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#assistant" aria-label="AIDTM Smart Campus AI home">
+      <span class="brand-word">adani</span>
+      <span class="brand-divider"></span>
+      <span class="brand-name">Institute of Digital<br>Technology Management</span>
+    </a>
+    <button class="mobile-nav-toggle" id="mobileNavToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Open navigation">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a class="active" href="#assistant">AI Assistant</a>
+      <a href="#trust">How it works</a>
+      <a href="https://www.aidtm.ac.in/" target="_blank" rel="noopener noreferrer">Official AIDTM ↗</a>
+    </nav>
+    <div class="header-actions">
+      <button class="header-login" id="loginOpen">Student Login</button>
+      <button class="btn btn-outline btn-header hidden" id="logoutButton">Sign out</button>
+      <a class="btn btn-primary btn-header ask-header" href="#assistant" data-open-chat>Ask the Assistant <span aria-hidden="true">↘</span></a>
+    </div>
+  </header>
+
+  <main id="assistant">
+    <section class="assistant-hero" aria-labelledby="assistantTitle">
+      <div class="assistant-stage page-shell">
+        <section class="assistant-context" aria-label="About the chatbot">
+          <div class="campus-image-wash"></div>
+          <div class="context-content">
+            <div class="hero-eyebrow"><span class="pulse-dot"></span> AIDTM · SMART CAMPUS AI</div>
+            <h1 id="assistantTitle">Your campus questions.<br><em>One conversation.</em></h1>
+            <p>Ask about your fee and scholarship status, payment policy, course changes, support requests and study topics—all in one conversation.</p>
+            <div class="topic-tags" aria-label="Topics supported">
+              <span>Programmes &amp; curriculum</span>
+              <span>Admissions &amp; fees</span>
+              <span>AI, Python &amp; SQL</span>
+            </div>
+            <div class="context-divider"></div>
+            <div class="context-promise"><span class="promise-icon">✓</span><div><strong>One agent, purposeful tools</strong><small>The assistant chooses when to check a record, retrieve a policy passage, create a support request or use a saved preference.</small></div></div>
+          </div>
+          <div class="photo-caption"><span></span> AIDTM Smart Campus AI <small>Coursework prototype</small></div>
+        </section>
+
+        <aside class="chat-panel open" id="chatPanel" aria-label="AIDTM Smart Campus AI chat" aria-hidden="false">
+          <div class="chat-panel-header">
+            <div class="assistant-avatar">✦</div>
+            <div class="chat-header-copy"><strong>AIDTM Smart Campus AI</strong><small><span class="online-dot"></span> Student support assistant</small></div>
+            <span class="header-secure-mark" title="Privacy controls enabled" aria-label="Privacy controls enabled">♢</span>
+          </div>
+          <div class="chat-privacy-banner"><span aria-hidden="true">♢</span> Demo environment only. Never share real passwords, OTPs or financial details.</div>
+          <div class="chat-login-prompt" id="chatLoginPrompt">
+            <div class="login-welcome-icon">✦</div>
+            <h3>How can I help you today?</h3>
+            <p>Sign in with a demo student account to start chatting and access your own fictional records.</p>
+            <button class="btn btn-primary btn-full" data-open-login>Sign in to start chatting <span aria-hidden="true">→</span></button>
+            <div class="chat-demo-hint">Local student accounts are created during first-time setup. See README.md.</div>
+          </div>
+          <div class="chat-authenticated hidden" id="chatAuthenticated">
+            <div class="chat-greeting"><span>Namaste, <b id="chatUserName">student</b> 👋</span><p>Ask a student-support question. I can use tools, retrieve relevant policy sections and recall preferences you explicitly asked me to save.</p></div>
+            <div class="chat-quick-prompts">
+              <button data-prompt="What is my current fee status?">My fee status</button>
+              <button data-prompt="What is my scholarship status?">Scholarship status</button>
+              <button data-prompt="The payment portal failed. Can I pay on the next working day?">Payment policy</button>
+              <button data-prompt="Please create a support ticket because I cannot access the student portal.">Create support ticket</button>
+              <button data-prompt="Please change my programme to PGDM in AI & Data Science.">Course change request</button>
+              <button data-prompt="What is a CNN?">Explain a CNN</button>
+            </div>
+            <div class="chat-messages" id="chatMessages" aria-live="polite">
+              <div class="chat-message assistant"><p>Welcome! I can help with AIDTM public information and general study questions. What would you like to know?</p></div>
+            </div>
+            <label class="consent-row"><input type="checkbox" id="memoryConsent"><span>Allow saving non-sensitive preferences when I explicitly ask</span></label>
+            <form class="chat-input-form" id="chatForm">
+              <textarea id="chatInput" rows="2" maxlength="4000" placeholder="Ask about AIDTM, your records, AI, SQL…" aria-label="Your message" required></textarea>
+              <button type="submit" id="sendChat" aria-label="Send message"><span>↑</span></button>
+            </form>
+            <div class="chat-footer-note">AI can make mistakes. Verify current institutional details from official AIDTM sources.</div>
+          </div>
+        </aside>
+      </div>
+      <div class="hero-bottom-line page-shell"><span class="hero-bottom-dot"></span> Student-support prototype <span class="separator">/</span> Fictional demo data <span class="separator">/</span> Not connected to live AIDTM systems</div>
+    </section>
+
+    <section class="workspace-section page-shell hidden" id="workspace">
+      <div class="workspace-top">
+        <div><div class="section-kicker">INTELLIGENT STUDENT SUPPORT AGENT <span></span> ASSIGNMENT 2</div><h2 id="workspaceTitle">Your Student Support</h2><p id="workspaceSubtitle">Explore your records, saved preferences, policy evidence and agent traces.</p></div>
+        <div class="user-pill" id="userPill"><span class="avatar" id="userInitials">U</span><span><b id="userName">Signed in</b><small id="userRole">Student account</small></span></div>
+      </div>
+      <div class="workspace-tabs" id="workspaceTabs"></div>
+      <div class="workspace-content" id="workspaceContent"><div class="loading-state"><span class="spinner"></span> Loading your workspace…</div></div>
+    </section>
+
+    <section class="trust-section" id="trust" aria-labelledby="trustTitle">
+      <div class="page-shell trust-inner">
+        <div class="trust-heading"><span class="trust-mark">✓</span><div><h2 id="trustTitle">Support with safeguards built in</h2><p>This coursework prototype demonstrates an agent that selects tools, retrieves only relevant policy passages, uses consent-based memory and records each run.</p></div></div>
+        <div class="trust-points"><div><strong>01</strong><span>Tool selection for student requests</span></div><div><strong>02</strong><span>Targeted student-policy retrieval</span></div><div><strong>03</strong><span>Persistent consent-based preferences</span></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand"><span class="brand-word">adani</span><span>Institute of Digital Technology Management</span></div>
+    <p>AIDTM Smart Campus AI · Agentic AI Engineering Assignment 2 · Coursework prototype</p>
+    <div class="footer-links"><a href="https://www.aidtm.ac.in/" target="_blank" rel="noopener noreferrer">Official AIDTM website ↗</a><a href="#assistant">Back to assistant ↑</a></div>
+  </footer>
+
+  <div class="modal-backdrop hidden" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+    <div class="login-modal">
+      <button class="icon-button modal-close" id="closeLogin" aria-label="Close sign in">×</button>
+      <div class="modal-brand"><span class="brand-word">adani</span><span class="brand-divider"></span><span>Institute of Digital<br>Technology Management</span></div>
+      <div class="modal-kicker">SMART CAMPUS AI</div><h2 id="loginTitle">Welcome back.</h2>
+      <p class="modal-description">Sign in with a fictional demo student account to use the support tools and view your own sample record.</p>
+      <form id="loginForm" class="login-form"><label>Username<input id="username" name="username" autocomplete="username" placeholder="e.g. stu1001" required maxlength="80"></label><label>Password<input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter demo password" required maxlength="500"></label><button class="btn btn-primary btn-full" type="submit" id="loginSubmit">Sign in securely <span>→</span></button><div class="form-error hidden" id="loginError" role="alert"></div></form>
+      <div class="demo-accounts"><strong>Local demo accounts</strong><div><span>Student usernames</span><code>stu1001 · stu1002 · stu1003</code></div><div><span>Approver username</span><code>approver</code></div><small>Run scripts/setup_demo_accounts.py to set passwords locally. Passwords are not included in this repository.</small></div>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

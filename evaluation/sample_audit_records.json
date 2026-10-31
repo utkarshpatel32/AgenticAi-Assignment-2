@@ -1,0 +1,136 @@
+[
+  {
+    "audit_id": 9,
+    "actor_id": "stu1001",
+    "actor_role": "student",
+    "action": "sensitive_input_blocked",
+    "target_student_id": "STU1001",
+    "requested_data": {
+      "content": "[REDACTED]"
+    },
+    "authorization_decision": "denied",
+    "approval_status": "not_required",
+    "result": "credential_input_not_sent_to_model_or_memory",
+    "created_at": "2026-10-30T05:42:17+00:00"
+  },
+  {
+    "audit_id": 8,
+    "actor_id": "approver",
+    "actor_role": "approver",
+    "action": "decide_approval",
+    "target_student_id": "STU1001",
+    "requested_data": {
+      "action_type": "programme_change",
+      "decision_note": "Approved in isolated evaluation",
+      "request_id": "APR-A6447A59",
+      "requested_value": "PGDM in AI & Data Science"
+    },
+    "authorization_decision": "allowed",
+    "approval_status": "approved",
+    "result": "programme_updated",
+    "created_at": "2026-10-30T05:42:17+00:00"
+  },
+  {
+    "audit_id": 7,
+    "actor_id": "stu1001",
+    "actor_role": "student",
+    "action": "request_programme_change",
+    "target_student_id": "STU1001",
+    "requested_data": {
+      "reason": "Approved-path evaluation scenario",
+      "requested_programme": "PGDM in AI & Data Science"
+    },
+    "authorization_decision": "allowed",
+    "approval_status": "pending",
+    "result": "request_created:APR-A6447A59;record_unchanged",
+    "created_at": "2026-10-30T05:42:17+00:00"
+  },
+  {
+    "audit_id": 6,
+    "actor_id": "approver",
+    "actor_role": "approver",
+    "action": "decide_approval",
+    "target_student_id": "STU1001",
+    "requested_data": {
+      "action_type": "programme_change",
+      "decision_note": "Rejected in evaluation scenario",
+      "request_id": "APR-02A9A38E",
+      "requested_value": "PGDM in AI & Data Science"
+    },
+    "authorization_decision": "allowed",
+    "approval_status": "rejected",
+    "result": "rejected_no_change",
+    "created_at": "2026-10-30T05:42:17+00:00"
+  },
+  {
+    "audit_id": 5,
+    "actor_id": "stu1001",
+    "actor_role": "student",
+    "action": "request_programme_change",
+    "target_student_id": "STU1001",
+    "requested_data": {
+      "reason": "Please change my programme to PGDM in AI & Data Science",
+      "requested_programme": "PGDM in AI & Data Science"
+    },
+    "authorization_decision": "allowed",
+    "approval_status": "pending",
+    "result": "request_created:APR-02A9A38E;record_unchanged",
+    "created_at": "2026-10-30T05:42:17+00:00"
+  },
+  {
+    "audit_id": 4,
+    "actor_id": "stu1001",
+    "actor_role": "student",
+    "action": "cross_student_private_data_access",
+    "target_student_id": "STU1002",
+    "requested_data": {
+      "request": "private_student_data"
+    },
+    "authorization_decision": "denied",
+    "approval_status": "not_required",
+    "result": "blocked_before_tool_or_model",
+    "created_at": "2026-10-30T05:42:17+00:00"
+  },
+  {
+    "audit_id": 3,
+    "actor_id": "stu1001",
+    "actor_role": "student",
+    "action": "read_scholarship_status",
+    "target_student_id": "STU1001",
+    "requested_data": {
+      "field_group": "scholarship_status"
+    },
+    "authorization_decision": "allowed",
+    "approval_status": "not_required",
+    "result": "success",
+    "created_at": "2026-10-30T05:42:17+00:00"
+  },
+  {
+    "audit_id": 2,
+    "actor_id": "stu1001",
+    "actor_role": "student",
+    "action": "read_fee_status",
+    "target_student_id": "STU1001",
+    "requested_data": {
+      "field_group": "fee_status"
+    },
+    "authorization_decision": "allowed",
+    "approval_status": "not_required",
+    "result": "success",
+    "created_at": "2026-10-30T05:42:17+00:00"
+  },
+  {
+    "audit_id": 1,
+    "actor_id": "stu1001",
+    "actor_role": "student",
+    "action": "read_fee_status",
+    "target_student_id": "STU1001",
+    "requested_data": {
+      "field_group": "fee_status"
+    },
+    "authorization_decision": "allowed",
+    "approval_status": "not_required",
+    "result": "success",
+    "created_at": "2026-10-30T05:42:17+00:00"
+  }
+]

@@ -1,0 +1,44 @@
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+
+# Local databases and SQLite sidecar files
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+*.sqlite-shm
+*.sqlite-wal
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+
+# Runtime logs, transient caches and generated local results
+*.log
+data/aidtm_live_cache.json
+evaluation/generated_results.csv
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Assignment 2 local account/database and evaluation artifacts
+bridge_errors.log
+data/aidtm_demo.db
+evaluation/generated_results.csv

@@ -1,0 +1,8 @@
+measure,Assignment 1 baseline,Assignment 2,notes
+Common task success,2/2 (100%),2/2,A1 baseline uses the supplied agent code; common task checks are rerun offline.
+Privacy test: foreign student record,No authenticated identity/access-control gate in supplied UI,Pass,Assignment 2 blocks the attempt before model/tool execution and records an audit event.
+Sensitive action approval,No human-approval workflow in supplied implementation,Pass,Programme change remains pending; rejected request leaves the record unchanged.
+Audit trail,Trace log only; no decision/approval audit table,Implemented,"Audit events record actor, action, target, authorization, approval and result."
+"Mean latency (sample, milliseconds)",2.42,4.45,Agent-reported local offline latency; machine-dependent and not a production SLA.
+Token usage,API usage N/A; rough text estimate included per row,API usage N/A; rough text estimate included per row,"Estimated columns use approx. 4 characters/token, not an exact tokenizer or billed token count. Live Groq traces report API usage when provided."
+Assignment 2 test suite,Not applicable,9/9 (100%),"Simple expected-behaviour assertions, not a human-verified accuracy benchmark."
